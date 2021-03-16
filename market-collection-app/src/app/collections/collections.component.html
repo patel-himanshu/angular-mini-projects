@@ -1,0 +1,14 @@
+<div class="row">
+    <div class="col-xs-12">
+        <ul class="list-group" *ngIf="collectedItems.length">
+            <li class="list-group-item" *ngFor="let collectable of collectedItems">
+                <span class="badge" *ngFor="let tag of collectable.tags">
+                    <span>{{ tag }}</span>
+                </span>
+                <button class="btn btn-danger" (click)="onRemoveFromCollection(collectable)">Remove</button> &nbsp;
+                {{ collectable.description }}
+            </li>
+        </ul>
+        <h3 *ngIf="!collectedItems.length">Add items from the above collection</h3>
+    </div>
+</div>
